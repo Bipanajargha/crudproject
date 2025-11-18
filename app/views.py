@@ -55,7 +55,7 @@ def edit(request, pk):
 # ---------------- API Views ---------------- 
 
 class FormCreate(APIView):
-    """Handles list and create operations"""
+    """Handles create operations"""
     @swagger_auto_schema(
         operation_summary="Create a new registration",
         operation_description="Submit the registration form. Returns the created object on success.",
@@ -74,6 +74,7 @@ class FormCreate(APIView):
         return Response({"message": "Invalid data", "errors": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
     
 class ListReg(APIView):
+    """Handles list operations"""
     @swagger_auto_schema(
         operation_summary= "List all registartions",
         operation_description="Returns a list of all registrations that are not deleted.",
