@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Registration</h1>
+
+<div class="container alert alert-info">
+    <div class="row">
+        <div class="col-8">
+            <form method="POST">
+                {% csrf_token %}
+
+                {% if messages %}
+
+                  {% for message in messages %}
+                   <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  {% endfor %}
+
+                {% endif %}
+                
+                <!-- display Django form errors -->
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        {{ form.errors }}
+                    </div>
+                {% endif %}
+                
+                <!-- render the form fields -->
+                {{ form.as_p }}
+                
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

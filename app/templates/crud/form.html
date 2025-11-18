@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> Register here </h1> 
+<form method="POST" action = "{% url 'form' %}">
+    {% csrf_token %}
+       <!-- to save in the form or display on the form page -->
+               <!-- {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      {{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                    {% endfor %}
+               {% endif %} -->
+               <!-- end -->
+    {{ form.as_p }}
+
+    <button type="submit"> Submit </button>
+</form>
+
+{% endblock content %}
