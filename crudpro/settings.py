@@ -208,7 +208,6 @@ SWAGGER_SETTINGS = {
     'USE_SESSION_AUTH': False,
 }
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST', default='smtp.gmail.com')
 EMAIL_PORT = config('EMAIL_PORT', default=587, cast=int)
@@ -217,10 +216,3 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'  # e.g., 'smtp.gmail.com' for Gmail
-# EMAIL_PORT = 587  # Common port for TLS
-# EMAIL_USE_TLS = True  # Use TLS encryption
-# EMAIL_HOST_USER = 'bipanajargha199@gmail.com'
-# EMAIL_HOST_PASSWORD = 'hpan igop erlm mpaa' 
-# DEFAULT_FROM_EMAIL = 'bipanajargha199@gmail.com'
